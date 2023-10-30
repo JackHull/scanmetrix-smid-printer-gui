@@ -6,7 +6,7 @@ declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
 const server = 'https://smid-printer-hazel.scanmetrix.io'
-const url = `${server}/update/${process.platform}/${app.getVersion()}`
+const url = `${server}/update/${process.platform}/${app.getVersion()}/nupkg`
 
 console.log(url)
 
