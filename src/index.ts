@@ -8,6 +8,8 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const server = 'https://smid-printer-hazel.scanmetrix.io/'
 const url = `${server}/update/${process.platform}/${app.getVersion()}`
 
+console.log(url)
+
 autoUpdater.setFeedURL({ url })
 
 const UPDATE_CHECK_INTERVAL = 10 * 60 * 1000
