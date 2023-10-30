@@ -1,6 +1,6 @@
 {
   "name": "scanmetrix-smid-printer-gui",
-  "productName": "scanmetrix-smid-printer-gui",
+  "productName": "scanmetrix Printer GUI",
   "version": "1.0.4",
   "description": "Standalone app for printing scanmetrix SMID qr-code stickers with supported Zebra printers.",
   "main": ".webpack/main",
@@ -42,10 +42,15 @@
     "typescript": "~4.5.4"
   },
   "dependencies": {
+    "antd": "^5.10.3",
     "dotenv": "^16.3.1",
     "electron-squirrel-startup": "^1.0.0",
+    "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "update-electron-app": "^3.0.0"
+    "react-router-dom": "^6.17.0",
+    "styled-components": "^6.1.0",
+    "update-electron-app": "^3.0.0",
+    "url-loader": "^4.1.1"
   }
 }

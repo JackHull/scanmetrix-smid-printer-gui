@@ -19,6 +19,12 @@ export const rules: Required<ModuleOptions>['rules'] = [
     },
   },
   {
+    test: /\.(jpe?g|png|svg)(\?[a-z0-9=.]+)?$/,
+    use: {
+      loader: 'url-loader?limit=100000'
+    }
+  },
+  {
     test: /\.tsx?$/,
     exclude: /(node_modules|\.webpack)/,
     use: {

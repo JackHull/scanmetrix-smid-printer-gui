@@ -1,5 +1,22 @@
 import { createRoot } from 'react-dom/client';
-import packageJSON from "../package.json"
+import Print from "./routes/Print"
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+import { ConfigProvider } from "antd";
+
+const router = createBrowserRouter([
+    {
+        path: "/main_window",
+        element: <Print />
+    }
+])
 
 const root = createRoot(document.body);
-root.render(<h2>Hello from React! Version: {packageJSON.version}</h2>);
+
+root.render(<div id="app">
+    <ConfigProvider theme={{ token: { colorPrimary: "#3b97d3" } }}>
+        <RouterProvider router={router} />
+    </ConfigProvider>
+</div>);
