@@ -5,7 +5,7 @@ import { app, autoUpdater, dialog, BrowserWindow } from "electron"
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
-const server = 'https://smid-printer-hazel.scanmetrix.io/'
+const server = 'https://smid-printer-hazel.scanmetrix.io'
 const url = `${server}/update/${process.platform}/${app.getVersion()}`
 
 console.log(url)
