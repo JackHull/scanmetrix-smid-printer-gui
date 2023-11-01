@@ -14,7 +14,7 @@ const setupDatabase = async () => {
 
   const JSONPreset = await (await import("lowdb/node")).JSONPreset
 
-  database = await JSONPreset(lowDBPath, { defaultPrinter: null, profiles: [] })
+  database = await JSONPreset(lowDBPath, { defaultPrinter: null, profiles: [], prints: [] })
 
   ipcMain.handle('database', async () => {
       return database

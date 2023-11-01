@@ -47,7 +47,7 @@ export default props => {
     return <Page>
         {contextHolder}
         <h1 style={{ marginBottom: 16 }}>Drucken</h1>
-        <Alert showIcon type="info" message={<>Damit die Druckfunktion korrekt funktionieren und alle Drucker angezeigt werden können, muss <a href="https://www.zebra.com/de/de/forms/browser-print-request-pc.html" target="_blank">Zebra Browser Print</a> auf dem Gerät installiert und konfiguriert sein.</>} />
+        <Alert showIcon type="info" message={<>Damit die Druckfunktion korrekt funktioniert und alle Drucker angezeigt werden können, muss <a href="https://www.zebra.com/de/de/forms/browser-print-request-pc.html" target="_blank">Zebra Browser Print</a> auf dem Gerät installiert und konfiguriert sein.</>} />
         <div style={{ width: "100%", display: "grid", gridGap: 32, gridTemplateColumns: "3fr 1fr" }}>
             <StyledContainer>
                 <div style={{ display: "grid", gridAutoFlow: "row", gridGap: 16 }}>
