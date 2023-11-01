@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 import icon from "../../icon.svg"
 import packageJSON from "../../../package.json"
+import { Link, useLocation } from "react-router-dom";
 
 const StyledNavigation = styled.nav`
     width: 100%;
@@ -37,6 +38,7 @@ const StyledNavigation = styled.nav`
     }
   
     .item {
+        text-decoration: none;
         height: 80px;
         width: 80px;
         display: flex;
@@ -71,23 +73,25 @@ const StyledNavigation = styled.nav`
 `
 
 export default () => {
+    const location = useLocation()
+
     return <StyledNavigation>
         <div className="items">
-            <div className="item selected">
+            <Link to="/" className={`item ${location.pathname === "/" ? "selected" : ""}`}>
                 <i className="fa-duotone fa-home" />
-            </div>
+            </Link>
             <div className="item">
                 <i className="fa-duotone fa-history" />
             </div>
-            <div className="item">
+            {/*<div className="item">
                 <i className="fa-duotone fa-shopping-cart" />
-            </div>
-            <div className="item">
+            </div>*/}
+            {/*<div className="item">
                 <i className="fa-duotone fa-cloud-download" />
-            </div>
-            <div className="item">
+            </div>*/}
+            <Link to="/settings"  className={`item ${location.pathname === "/settings" ? "selected" : ""}`}>
                 <i className="fa-duotone fa-cog" />
-            </div>
+            </Link>
         </div>
         <div className="logo">
             <p className="version">{packageJSON.version}</p>
