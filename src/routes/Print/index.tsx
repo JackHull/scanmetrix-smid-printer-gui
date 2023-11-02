@@ -32,6 +32,8 @@ export default () => {
         stack: {threshold: 3}
     });
 
+    console.log(profile)
+
     const fetch = () => {
         ipcRenderer.invoke('database').then(database => {
             setProfiles(database.data.profiles)
@@ -87,7 +89,7 @@ export default () => {
                     </div>
                     <div>
                         <Typography.Title level={5}>Profil auswählen</Typography.Title>
-                        <Select disabled={printing || !printer} value={profile?.id} onSelect={profile => setProfile(profiles.find(p => p.id === profile.id))} suffixIcon={<i className="fas fa-user" />} style={{ width: "100%" }} size="large" placeholder="Standardprofil" options={profiles.map(profile => ({ value: profile.id, label: profile.name }))} />
+                        <Select disabled={printing || !printer} value={profile?.id} onSelect={profile => setProfile(profiles.find(p => p.id === profile))} suffixIcon={<i className="fas fa-user" />} style={{ width: "100%" }} size="large" placeholder="Standardprofil" options={profiles.map(profile => ({ value: profile.id, label: profile.name }))} />
                     </div>
                     <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridGap: 32 }}>
                         <div>
