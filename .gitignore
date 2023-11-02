@@ -92,3 +92,5 @@ typings/
 
 # Electron-Forge
 out/
+
+dist/win-unpacked/resources/app.asar

@@ -80,9 +80,9 @@ export default () => {
             <Link to="/" className={`item ${location.pathname === "/" ? "selected" : ""}`}>
                 <i className="fa-duotone fa-home" />
             </Link>
-            <div className="item">
+            <Link to="/prints" className={`item ${location.pathname === "/prints" ? "selected" : ""}`}>
                 <i className="fa-duotone fa-history" />
-            </div>
+            </Link>
             {/*<div className="item">
                 <i className="fa-duotone fa-shopping-cart" />
             </div>*/}

@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import Print from "./routes/Print"
+import Prints from "./routes/Prints"
 import Settings from "./routes/Settings"
 import {
     createHashRouter,
@@ -15,6 +16,10 @@ const router = createHashRouter([
     {
         path: "/settings",
         element: <Settings />
+    },
+    {
+        path: "/prints",
+        element: <Prints />
     }
 ])
 
