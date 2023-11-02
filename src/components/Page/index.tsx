@@ -13,6 +13,7 @@ const StyledPage = styled.div`
     }
 `
 
+// @ts-ignore
 export default props => {
     return <StyledPage>
         <Navigation />

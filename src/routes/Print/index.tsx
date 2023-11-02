@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
   margin-top: 16px;
 `
 
-export default props => {
+export default () => {
     const [ printers, setPrinters ] = useState([])
     const [ amount, setAmount ] = useState(0)
     const [ printer, setPrinter ] = useState(null)
@@ -118,6 +118,7 @@ export default props => {
                 const browserPrint = new ZebraBrowserPrintWrapper()
 
                 const printers = await browserPrint.getAvailablePrinters()
+                // @ts-ignore
                 const zebraPrinter = printers.find(p => p.uid === printer)
 
                 if(!zebraPrinter) {
@@ -160,6 +161,7 @@ export default props => {
                         date: moment().format("DD.MM.YYYY HH:mm")
                     })
 
+                    // @ts-ignore
                     database.data.profiles = database.data.profiles.map(p => {
                         if(p.id !== profile.id) return p
 
@@ -183,6 +185,7 @@ export default props => {
                                 })
 
                                 ipcRenderer.invoke('database').then(database => {
+                                    // @ts-ignore
                                     setProfile(database.data.profiles.find(p => p.id === profile.id))
                                 })
                             } else {

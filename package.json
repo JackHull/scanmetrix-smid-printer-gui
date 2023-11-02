@@ -1,6 +1,6 @@
 {
   "name": "scanmetrix-smid-printer-gui",
-  "productName": "scanmetrix Printer GUI",
+  "productName": "scanmetrix SMID Druckanwendung",
   "version": "1.0.5",
   "description": "Standalone app for printing scanmetrix SMID qr-code stickers with supported Zebra printers.",
   "main": ".webpack/main",
@@ -11,10 +11,9 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
-  "keywords": [],
   "author": {
     "name": "Jack Hull",
-    "email": "jack@thehulls.de"
+    "email": "j.hull@scanmetrix.fm"
   },
   "license": "MIT",
   "devDependencies": {

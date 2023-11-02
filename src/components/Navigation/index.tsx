@@ -1,4 +1,5 @@
 import { styled } from "styled-components"
+// @ts-ignore
 import icon from "../../icon.svg"
 import packageJSON from "../../../package.json"
 import { Link, useLocation } from "react-router-dom";

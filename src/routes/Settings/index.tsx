@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Page from "../../components/Page"
 import {Button, FloatButton, Input, InputNumber, Modal, notification, Popover, Table, Typography} from "antd";
 import {useEffect, useState} from "react";
+// @ts-ignore
 import { v4 as uuid } from "uuid"
 import TextArea from "antd/lib/input/TextArea";
 const { ipcRenderer } = window.require("electron");
@@ -41,6 +42,8 @@ export default () => {
         fetch()
     }, [])
 
+    // @ts-ignore
+    // @ts-ignore
     return <Page>
         {contextHolder}
         <Modal onCancel={() => {
@@ -62,6 +65,7 @@ export default () => {
                         setTimeout(() => setEditModalOpen(false), 100)
 
                         ipcRenderer.invoke('database').then(database => {
+                            // @ts-ignore
                             database.data.profiles = database.data.profiles.filter(profile => profile.id !== id)
 
                             ipcRenderer.invoke('save-database', database.data).then(() => {
@@ -81,6 +85,7 @@ export default () => {
                 </Popover>
                 <Button disabled={!name || !globalId || startNumber === null || startNumber < 0} type="primary" onClick={() => {
                     ipcRenderer.invoke('database').then(database => {
+                        // @ts-ignore
                         database.data.profiles = database.data.profiles.map(profile => {
                             if(profile.id !== id) return profile
 
@@ -166,11 +171,11 @@ export default () => {
                 </div>
                 <div>
                     <Typography.Title level={5}>Globale ID</Typography.Title>
-                    <InputNumber value={globalId} onChange={setGlobalId} placeholder="bspw. 123" addonBefore={<i className="fa-duotone fa-globe" />} style={{ width: "100%" }} size="large" />
+                    <InputNumber value={globalId} onChange={value => setGlobalId(value)} placeholder="bspw. 123" addonBefore={<i className="fa-duotone fa-globe" />} style={{ width: "100%" }} size="large" />
                 </div>
                 <div>
                     <Typography.Title level={5}>Startwert</Typography.Title>
-                    <InputNumber value={startNumber} onChange={setStartNumber} placeholder="bspw. 1" addonBefore={<i className="fa-duotone fa-tally" />} style={{ width: "100%" }} size="large" />
+                    <InputNumber value={startNumber} onChange={value => setStartNumber(value)} placeholder="bspw. 1" addonBefore={<i className="fa-duotone fa-tally" />} style={{ width: "100%" }} size="large" />
                 </div>
             </div>
         </Modal>

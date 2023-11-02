@@ -71,6 +71,7 @@ const createWindow = (): void => {
     autoHideMenuBar: true,
     resizable: false,
     webPreferences: {
+      devTools: false,
       nodeIntegration: true,
       contextIsolation: false,
       webSecurity: false,
